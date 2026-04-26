@@ -1,7 +1,7 @@
 ---
 title: "Ch01. Flutter 기초 - 위젯부터 인스타 클론까지"
 slug: "ch01-flutter-basics"
-date: 2026-03-01
+date: 2026-04-13
 draft: false
 tags: ["Flutter", "Widget", "Layout", "Navigation", "setState", "GoRouter", "Instagram Clone"]
 categories: ["Flutter"]
