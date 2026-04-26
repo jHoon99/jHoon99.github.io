@@ -1,0 +1,13 @@
+baseURL = "https://jHoon99.github.io/"
+languageCode = "ko-kr"
+title = "jHoon"
+theme = "hugo-theme-stack"
+defaultContentLanguage = "ko"
+hasCJKLanguage = true
+
+[pagination]
+    pagerSize = 10
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"

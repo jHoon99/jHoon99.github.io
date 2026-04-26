@@ -1,0 +1,46 @@
+mainSections = ["post"]
+rssFullContent = true
+
+[footer]
+    since = 2026
+
+[dateFormat]
+    published = "2006.01.02"
+    lastUpdated = "2006.01.02"
+
+[sidebar]
+    compact = false
+    subtitle = "iOS 개발자의 Flutter 공부 기록"
+
+[article]
+    headingAnchor = true
+    math = false
+    toc = true
+    readingTime = false
+
+    [article.list]
+        showTags = true
+
+    [article.license]
+        enabled = false
+
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "categories", params = { limit = 10 } },
+        { type = "tag-cloud", params = { limit = 15 } },
+    ]
+    page = [{ type = "toc" }]
+
+[colorScheme]
+    toggle = true
+    default = "dark"
+
+[imageProcessing]
+    [imageProcessing.content]
+        enabled = true
+    [imageProcessing.thumbnail]
+        enabled = true
+
+[comments]
+    enabled = false
