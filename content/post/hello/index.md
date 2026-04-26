@@ -1,5 +1,6 @@
 ---
 title: "블로그 시작"
+slug: "hello"
 date: 2026-04-26
 draft: false
 tags: ["Flutter"]
