@@ -193,18 +193,38 @@ Swift의 `Set`과 동일하다. 교집합, 합집합도 `intersection()`, `union
 Swift의 제네릭과 문법이 거의 같다. `<T>` 대신 제약을 걸 때 Swift는 `<T: Protocol>`이고 Dart는 `<T extends Class>` 이 차이 정도.
 
 ```dart
-// 제네릭 클래스
-class Result<T> {
-  final T data;
-  final String? error;
-
-  Result.success(this.data) : error = null;
-  Result.failure(this.error) : data = null as T;
+// Dart 3의 sealed class로 제네릭 Result 패턴
+sealed class Result<T> {
+  const Result();
 }
 
-var stringResult = Result<String>.success('ok');
-var intResult = Result<int>.success(42);
+class Success<T> extends Result<T> {
+  final T data;
+  const Success(this.data);
+}
+
+class Failure<T> extends Result<T> {
+  final String message;
+  const Failure(this.message);
+}
+
+// 사용
+Result<int> fetchScore() {
+  var ok = true;
+  return ok ? Success(95) : Failure('서버 에러');
+}
+
+// switch로 분기 — sealed라서 빠뜨리면 컴파일 경고
+var result = fetchScore();
+switch (result) {
+  case Success(:final data):
+    print('점수: $data');
+  case Failure(:final message):
+    print('실패: $message');
+}
 ```
+
+Swift의 `enum`+`associated value` 패턴이랑 비슷한데, Dart는 `sealed class` + 서브클래스로 구현한다. Dart 3 이전에는 `data = null as T` 같은 꼼수를 썼는데, null safety에서 터지니까 이제는 sealed가 정석이다.
 
 ### 타입 제약
 
