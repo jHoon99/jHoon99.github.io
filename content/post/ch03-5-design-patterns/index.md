@@ -1,7 +1,7 @@
 ---
 title: "Ch03-5. GoF 디자인 패턴 - Singleton, Factory, Builder, Command"
 slug: "ch03-5-design-patterns"
-date: 2026-04-28
+date: 2026-04-29
 draft: false
 tags: ["Flutter", "Dart", "Design Patterns", "Singleton", "Factory", "Builder", "Command"]
 categories: ["Flutter"]
