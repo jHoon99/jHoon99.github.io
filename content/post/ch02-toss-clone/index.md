@@ -2,7 +2,7 @@
 title: "Ch02. 토스 앱 클론 - 실전 UI와 상태관리"
 slug: "ch02-toss-clone"
 date: 2026-04-23
-weight: 6
+weight: 7
 draft: false
 tags: ["Flutter", "GetX", "BottomNavigationBar", "CustomScrollView", "Theme", "Animation", "Toss Clone"]
 categories: ["Flutter"]
