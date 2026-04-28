@@ -1,7 +1,7 @@
 ---
 title: "Ch03-2. Dart 비동기 - Future, Stream"
 slug: "ch03-2-dart-async"
-date: 2026-04-28
+date: 2026-04-26
 draft: false
 tags: ["Flutter", "Dart", "Future", "async", "await", "Stream", "BroadcastStream"]
 categories: ["Flutter"]

@@ -1,7 +1,7 @@
 ---
 title: "Ch03-4. SOLID, DRY, KISS - 설계 원칙 정리"
 slug: "ch03-4-solid-dry-kiss"
-date: 2026-04-30
+date: 2026-04-28
 draft: false
 tags: ["Flutter", "Dart", "SOLID", "DRY", "KISS", "Design Principles"]
 categories: ["Flutter"]

@@ -1,7 +1,7 @@
 ---
 title: "Ch03-1. Dart 컬렉션과 제네릭"
 slug: "ch03-1-dart-collections"
-date: 2026-04-27
+date: 2026-04-25
 draft: false
 tags: ["Flutter", "Dart", "List", "Map", "Set", "Generics", "Abstract Class"]
 categories: ["Flutter"]
