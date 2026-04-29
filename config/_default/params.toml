@@ -1,7 +1,7 @@
 mainSections = ["post"]
 rssFullContent = true
 favicon = "img/favicon.jpg"
-description = "iOS 개발자의 Flutter 독학 기록. Swift와 비교하며 정리하는 Flutter, Dart, 상태관리 블로그."
+description = "iOS 개발자의 Flutter 독학 기록. 매일 조금씩 끄적끄적."
 
 [footer]
     since = 2026
