@@ -3,6 +3,13 @@
     justify-content: center;
 }
 
+/* 아카이브 카테고리 카드 - 글자 크기에 맞게 */
+.template-archives header .article-list--tile article {
+    width: auto;
+    height: auto;
+    min-width: unset;
+}
+
 /* 관련 글 가로 스크롤바 항상 표시 */
 .subsection-list {
     overflow-x: scroll;
