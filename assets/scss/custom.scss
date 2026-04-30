@@ -1,0 +1,23 @@
+/* 관련 글 카드 - 텍스트 가운데 정렬 */
+.article-list--tile article .article-details {
+    justify-content: center;
+}
+
+/* 관련 글 가로 스크롤바 항상 표시 */
+.subsection-list {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--body-background);
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--accent-color-darker);
+        border-radius: 3px;
+    }
+}
