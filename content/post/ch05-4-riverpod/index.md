@@ -11,6 +11,8 @@ description: "BLoC으로 만든 Todo 앱을 Riverpod으로 전환하면서 State
 
 Ch05 시리즈 마지막이다. BLoC에서 Riverpod으로 전환한다. 솔직히 BLoC의 Event 기반 구조가 MVI 느낌이라 꽤 마음에 들었는데, Riverpod 써보니까 생산성이 말이 안 된다. 뷰에서 상태별 분기가 `.when` 하나로 되고, BLoC에서 필요했던 Event 클래스, State 래퍼, Emitter 전달 같은 보일러플레이트가 싹 사라진다.
 
+> 이 글의 코드는 **flutter_riverpod 2.6.1** 기준이다. 최신 Riverpod 3.0과의 차이점은 글 하단에 정리했다.
+
 ## BLoC → Riverpod, 뭐가 바뀌나
 
 | 영역 | BLoC | Riverpod |
@@ -536,6 +538,45 @@ Ch05 전체를 통해 같은 Todo 앱을 4가지 방식으로 만들어봤다:
 | 보일러플레이트 | 중간 | 적음 | 많음 | 적음 |
 | 추적성 | 낮음 | 낮음 | 높음 | 중간 |
 | 메모리 관리 | 자동 | 수동 | 자동 | 자동 |
+
+## Riverpod 3.0 — 2025년 9월 기준 변경점
+
+이 글에서 쓴 코드는 Riverpod 2.x 기반이다. 2025년 9월에 Riverpod 3.0이 나왔는데, 핵심 개념(`ref.watch`, `ref.read`, `.when`, `ProviderScope`)은 그대로고 보일러플레이트가 더 줄었다.
+
+| | Riverpod 2.x (이 글) | Riverpod 3.0 |
+|--|---|---|
+| Provider 선언 | `StateNotifierProvider<T, S>((ref) => ...)` 직접 작성 | `@riverpod` 붙이면 자동 생성 |
+| 상태 클래스 | `StateNotifier<T>` | `Notifier<T>` (`StateNotifier` deprecated) |
+| 비동기 | `FutureProvider` 별도 선언 | `@riverpod Future<T>` 함수로 통일 |
+| Mutation | 없음 | `@mutation`으로 폼 제출/버튼 액션의 로딩/에러 자동 관리 (experimental) |
+| AsyncValue | 일반 클래스 | `sealed class` — 패턴 매칭 시 빠뜨리면 컴파일 에러 |
+
+3.0에서 가장 큰 변화는 `StateNotifier`가 `Notifier`로 대체된 것과, `@riverpod` 코드 제너레이션이 기본이 된 것이다:
+
+```dart
+// 2.x: 직접 선언
+final todoDataProvider = StateNotifierProvider<TodoDataHolder, List<Todo>>(
+    (ref) => TodoDataHolder());
+
+class TodoDataHolder extends StateNotifier<List<Todo>> {
+  TodoDataHolder() : super([]);
+  // ...
+}
+
+// 3.0: @riverpod + Notifier
+@riverpod
+class TodoDataHolder extends _$TodoDataHolder {
+  @override
+  List<Todo> build() => [];  // 초기 상태
+
+  void addTodo(Todo todo) {
+    state = [...state, todo];
+  }
+}
+// build_runner가 todoDataHolderProvider 자동 생성
+```
+
+Mutation API는 아직 experimental이라 API가 바뀔 수 있지만, 폼 제출 같은 액션의 로딩/성공/에러 상태를 자동으로 관리해주는 기능이다. 정식 출시되면 `ref.listen`으로 수동 처리하던 부분이 더 간결해질 예정이다.
 
 ## 내가 느낀 점
 
