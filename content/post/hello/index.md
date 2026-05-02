@@ -2,7 +2,7 @@
 title: "블로그 시작"
 slug: "hello"
 date: 2026-03-01
-weight: 12
+weight: 13
 draft: false
 tags: ["Flutter"]
 categories: ["Flutter"]

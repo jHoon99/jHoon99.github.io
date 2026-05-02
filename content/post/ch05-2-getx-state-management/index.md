@@ -2,7 +2,7 @@
 title: "Ch05-2. Todo 앱 GetX로 전환 - .obs와 Obx의 마법"
 slug: "ch05-2-getx-state-management"
 date: 2026-05-02
-weight: 2
+weight: 3
 draft: false
 tags: ["Flutter", "Dart", "State Management", "GetX", "Obx", "RxList", "Todo App"]
 categories: ["Flutter"]
