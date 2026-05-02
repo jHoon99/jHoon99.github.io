@@ -2,7 +2,7 @@
 title: "Ch05-4. Todo 앱 Riverpod 전환 - 이게 진짜 사기다"
 slug: "ch05-4-riverpod"
 date: 2026-05-02
-weight: 1
+weight: 3
 draft: false
 tags: ["Flutter", "Dart", "State Management", "Riverpod", "StateNotifier", "ConsumerWidget", "FutureProvider", "Todo App"]
 categories: ["Flutter"]

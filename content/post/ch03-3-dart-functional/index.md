@@ -2,7 +2,7 @@
 title: "Ch03-3. Dart 함수형 프로그래밍"
 slug: "ch03-3-dart-functional"
 date: 2026-04-27
-weight: 8
+weight: 10
 draft: false
 tags: ["Flutter", "Dart", "Lambda", "Iterable", "Functional Programming", "Generator"]
 categories: ["Flutter"]
