@@ -4,6 +4,7 @@ title = "jHoon"
 theme = "hugo-theme-stack"
 defaultContentLanguage = "ko"
 hasCJKLanguage = true
+timeZone = "Asia/Seoul"
 enableRobotsTXT = true
 
 [pagination]

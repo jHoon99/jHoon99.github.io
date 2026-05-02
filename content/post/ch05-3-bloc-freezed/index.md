@@ -1,7 +1,7 @@
 ---
 title: "Ch05-3. Todo 앱 BLoC + freezed 전환 - 이벤트 기반 상태관리"
 slug: "ch05-3-bloc-freezed"
-date: 2026-05-02
+date: 2026-05-01
 weight: 4
 draft: false
 tags: ["Flutter", "Dart", "State Management", "BLoC", "freezed", "sealed class", "Immutable", "Todo App"]

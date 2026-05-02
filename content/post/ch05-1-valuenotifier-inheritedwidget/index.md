@@ -1,7 +1,7 @@
 ---
 title: "Ch05-1. Todo 앱으로 상태관리 입문 - ValueNotifier + InheritedWidget"
 slug: "ch05-1-valuenotifier-inheritedwidget"
-date: 2026-05-02
+date: 2026-04-29
 weight: 6
 draft: false
 tags: ["Flutter", "Dart", "State Management", "ValueNotifier", "InheritedWidget", "Todo App"]
