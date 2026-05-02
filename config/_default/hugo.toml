@@ -4,6 +4,7 @@ title = "jHoon"
 theme = "hugo-theme-stack"
 defaultContentLanguage = "ko"
 hasCJKLanguage = true
+enableRobotsTXT = true
 
 [pagination]
     pagerSize = 10
