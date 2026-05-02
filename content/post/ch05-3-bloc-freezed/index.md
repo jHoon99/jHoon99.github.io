@@ -9,7 +9,7 @@ categories: ["Flutter"]
 description: "Todo 앱을 BLoC + freezed로 전환하면서 Event-driven 아키텍처와 불변 상태의 장점을 체감한 기록"
 ---
 
-Ch05 시리즈의 마지막이다. GetX에서 BLoC으로 전환한다. 핵심 변화는 2가지다: (1) 상태 변경을 **Event**로 제한하고, (2) Todo 모델을 freezed로 **immutable**하게 바꾸는 것. 코드량은 늘어나지만 "상태가 어디서 왜 바뀌었는지" 추적이 확실해진다.
+Ch05 시리즈 세 번째다. GetX에서 BLoC으로 전환한다. 핵심 변화는 2가지다: (1) 상태 변경을 **Event**로 제한하고, (2) Todo 모델을 freezed로 **immutable**하게 바꾸는 것. 코드량은 늘어나지만 "상태가 어디서 왜 바뀌었는지" 추적이 확실해진다.
 
 ## BLoC이란
 
