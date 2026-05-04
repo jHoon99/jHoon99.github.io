@@ -2,7 +2,7 @@
 title: "Ch05-6. 아키텍처와 상태관리 총정리 - 정답은 없고 차이만 있다"
 slug: "ch05-6-architecture-wrap-up"
 date: 2026-05-03
-weight: 1
+weight: 2
 draft: false
 tags: ["Flutter", "Dart", "State Management", "Architecture", "GetX", "BLoC", "Riverpod", "ValueNotifier"]
 categories: ["Flutter"]
