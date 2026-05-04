@@ -1,8 +1,7 @@
 ---
 title: "Ch04. 상태관리를 왜 해야 하는가 - MVC에서 선언형 UI까지"
 slug: "ch04-state-management"
-date: 2026-04-28
-weight: 8
+date: 2026-04-28T03:00:00+09:00
 draft: false
 tags: ["Flutter", "Dart", "State Management", "MVVM", "MVC", "GetX", "Provider", "BLoC", "Riverpod", "Declarative UI"]
 categories: ["Flutter"]

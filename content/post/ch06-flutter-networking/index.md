@@ -2,7 +2,6 @@
 title: "Ch06. Flutter 네트워킹 - API부터 Riverpod 연동까지 한방 정리"
 slug: "ch06-flutter-networking"
 date: 2026-05-05
-weight: 1
 draft: false
 tags: ["Flutter", "Dart", "REST API", "Dio", "Retrofit", "Freezed", "Riverpod", "JWT", "json_serializable"]
 categories: ["Flutter"]

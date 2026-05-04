@@ -1,8 +1,7 @@
 ---
 title: "Ch05-5. Flutter Hooks + Riverpod - SwiftUI @State가 여기 있었네"
 slug: "ch05-5-flutter-hooks"
-date: 2026-05-03
-weight: 3
+date: 2026-05-03T01:00:00+09:00
 draft: false
 tags: ["Flutter", "Dart", "flutter_hooks", "Riverpod", "HookConsumerWidget", "useState", "useEffect"]
 categories: ["Flutter"]
