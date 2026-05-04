@@ -539,6 +539,21 @@ Ch05 전체를 통해 같은 Todo 앱을 4가지 방식으로 만들어봤다:
 | 추적성 | 낮음 | 낮음 | 높음 | 중간 |
 | 메모리 관리 | 자동 | 수동 | 자동 | 자동 |
 
+## 내가 느낀 점
+
+BLoC의 Event 기반 구조가 사실상 Scope 역할을 하는 거라고 느꼈다. 어떤 이벤트가 어떤 상태를 바꾸는지 명확히 분리되니까. 근데 Riverpod은 Provider 단위로 관심사를 나누면서도 코드량이 훨씬 적다.
+
+```dart
+// 관심사 분리: Provider 단위로 나누면 됨
+final todoDataProvider = StateNotifierProvider<TodoDataHolder, List<Todo>>(...);
+final userProvider = FutureProvider<User>(...);
+final settingsProvider = StateNotifierProvider<SettingsNotifier, Settings>(...);
+```
+
+젤 좋은 건 뷰에서 상태별 화면 분기가 `.when` 하나로 되는 점이다. 로딩/에러/데이터를 빠뜨릴 수 없게 강제하니까 안전하고, 각 분기에 아무 위젯이나 넣을 수 있으니까 커스텀도 자유롭다.
+
+앱이 커져서 상태가 많아지면 Provider를 나누면 되고, Scope가 필요하면 `ProviderScope`의 `overrides`로 해결된다. 개인 프로젝트에서 쓴다면 Riverpod이 정답인 것 같다.
+
 ## Riverpod 3.0 — 2025년 9월 기준 변경점
 
 이 글에서 쓴 코드는 Riverpod 2.x 기반이다. 2025년 9월에 Riverpod 3.0이 나왔는데, 핵심 개념(`ref.watch`, `ref.read`, `.when`, `ProviderScope`)은 그대로고 보일러플레이트가 더 줄었다.
@@ -577,18 +592,3 @@ class TodoDataHolder extends _$TodoDataHolder {
 ```
 
 Mutation API는 아직 experimental이라 API가 바뀔 수 있지만, 폼 제출 같은 액션의 로딩/성공/에러 상태를 자동으로 관리해주는 기능이다. 정식 출시되면 `ref.listen`으로 수동 처리하던 부분이 더 간결해질 예정이다.
-
-## 내가 느낀 점
-
-BLoC의 Event 기반 구조가 사실상 Scope 역할을 하는 거라고 느꼈다. 어떤 이벤트가 어떤 상태를 바꾸는지 명확히 분리되니까. 근데 Riverpod은 Provider 단위로 관심사를 나누면서도 코드량이 훨씬 적다.
-
-```dart
-// 관심사 분리: Provider 단위로 나누면 됨
-final todoDataProvider = StateNotifierProvider<TodoDataHolder, List<Todo>>(...);
-final userProvider = FutureProvider<User>(...);
-final settingsProvider = StateNotifierProvider<SettingsNotifier, Settings>(...);
-```
-
-젤 좋은 건 뷰에서 상태별 화면 분기가 `.when` 하나로 되는 점이다. 로딩/에러/데이터를 빠뜨릴 수 없게 강제하니까 안전하고, 각 분기에 아무 위젯이나 넣을 수 있으니까 커스텀도 자유롭다.
-
-앱이 커져서 상태가 많아지면 Provider를 나누면 되고, Scope가 필요하면 `ProviderScope`의 `overrides`로 해결된다. 개인 프로젝트에서 쓴다면 Riverpod이 정답인 것 같다.
